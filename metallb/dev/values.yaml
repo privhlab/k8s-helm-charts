@@ -23,10 +23,10 @@ metallb:
 custom:
   ingressPools:
     - name: custom-ingress-pool
-      enabled: true
+      enabled: false
       addresses:
         - 192.168.100.200/32
     - name: customtest
-      enabled: false
+      enabled: true
       addresses:
         - 192.168.100.201/32
