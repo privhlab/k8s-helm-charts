@@ -5,8 +5,8 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/privhlab/elasticsearch.git
-    path: .
+    repoURL: https://github.com/privhlab/k8s-helm-charts.git
+    path: csi
     targetRevision: HEAD
     helm:
       valueFiles:
