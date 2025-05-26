@@ -1,0 +1,32 @@
+metallb:
+  rbac:
+    create: true
+  controller:
+    serviceAccount:
+        # Specifies whether a ServiceAccount should be created
+        create: true
+        # The name of the ServiceAccount to use.  If not set and create is
+        # true, a name is generated using the fullname template
+        name: ""  
+  speaker:
+    serviceAccount:
+      # Specifies whether a ServiceAccount should be created
+      create: true
+      # The name of the ServiceAccount to use.  If not set and create is
+      # true, a name is generated using the fullname template
+      name: ""
+    securityContext:
+      runAsNonRoot: false
+      # nobody
+      runAsUser: 0
+      fsGroup: 0
+custom:
+  ingressPools:
+    - name: custom-ingress-pool
+      enabled: false
+      addresses:
+        - 192.168.100.200/32
+    - name: customtest
+      enabled: false
+      addresses:
+        - 192.168.100.201/32

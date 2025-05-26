@@ -1,0 +1,10 @@
+apiVersion: v2
+name: elk-stack
+description: A Helm chart for the ELK stack
+type: application
+version: 1.0.0
+appVersion: 1.0.0
+dependencies:
+- name: elasticsearch
+  version: 8.5.1
+  repository: "https://helm.elastic.co"

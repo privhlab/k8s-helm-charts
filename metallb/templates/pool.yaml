@@ -1,0 +1,25 @@
+{{- if .Values.custom.ingressPools }}
+{{- range $pool := .Values.custom.ingressPools }}
+{{- if $pool.enabled }}
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: {{ $pool.name }}
+  namespace: {{ $.Release.Namespace }}
+spec:
+  addresses:
+  {{- range $address := $pool.addresses }}
+    - {{ $address }}
+  {{- end }}
+---
+apiVersion: metallb.io/v1beta1
+kind: L2Advertisement
+metadata:
+  name: metallb-default
+  namespace: {{ $.Release.Namespace }}
+spec:
+  ipAddressPools:
+    - {{ $pool.name }}
+{{- end }}
+{{- end }}
+{{- end }}
