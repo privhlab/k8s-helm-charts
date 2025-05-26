@@ -1,0 +1,16 @@
+csi-driver-nfs:
+  StorageClass:
+    create: true
+    name: nfs-csi
+    annotations:
+      storageclass.kubernetes.io/is-default-class: "true"
+  provisioner: nfs.csi.k8s.io
+  parameters:
+    server: 192.168.1.10
+    share: /nfs/dev
+    mountPermissions: "2777"
+  reclaimPolicy: Delete
+  volumeBindingMode: Immediate
+  allowVolumeExpansion: true
+  mountOptions:
+    - nfsvers=4.1
