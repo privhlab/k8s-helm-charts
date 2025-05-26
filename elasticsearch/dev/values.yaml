@@ -104,7 +104,7 @@ elasticsearch:
       cpu: "25m"
       memory: "200Mi"
     limits:
-      cpu: "1000m"
+      cpu: "1"
       memory: "2Gi"
 
   initResources: {}
@@ -231,7 +231,6 @@ elasticsearch:
   podSecurityContext:
     fsGroup: 1000
     runAsUser: 1000
-    privileged: true
 
   securityContext:
     privileged: true

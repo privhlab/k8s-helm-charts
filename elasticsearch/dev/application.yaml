@@ -3,10 +3,10 @@ kind: Application
 metadata:
   name: elasticsearch
 spec:
-  project: default
+  project: elastic
   source:
     repoURL: https://github.com/privhlab/k8s-helm-charts.git
-    path: csi
+    path: elasticsearch
     targetRevision: HEAD
     helm:
       valueFiles:
