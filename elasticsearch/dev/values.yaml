@@ -262,14 +262,14 @@ elasticsearch:
   # Enabling this will publicly expose your Elasticsearch instance.
   # Only enable this if you have security enabled on your cluster
   ingress:
-    enabled: false
+    enabled: true
     annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
     className: "nginx"
     pathtype: ImplementationSpecific
     hosts:
-      - host: chart-example.local
+      - host: elasticsearch.dev.local
         paths:
           - path: /
     tls: []
