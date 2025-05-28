@@ -2,7 +2,7 @@ minio:
   ingress:
     enabled: true
     hostname: minio.dev.local
-    className: nginx
+    className: ingressClassName
   auth:
     existingSecret: minio
     rootUserSecretKey: rootUser
